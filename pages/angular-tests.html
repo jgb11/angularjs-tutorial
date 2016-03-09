@@ -1,0 +1,65 @@
+<h2 class="page-header">$scope Test</h2>
+<!--
+<h3 class="alert alert-info" ng-controller="testController as testCtrl">
+  {{ message }}
+</h3>
+-->
+<h3 class="alert alert-info" ng-bind="message | lowercase"></h3>
+<h3 class="alert alert-warning" ng-init="message2 = 'Initialized from ngInit!'">
+  {{ message2 }}
+</h3>
+<h4 class="alert alert-link" ng-controller="testController as testCtrl">
+  {{ testCtrl.greeting }}
+</h4>
+
+<h2 class="page-header">ngModel Test</h2>
+<div class="row">
+  <p class="lead col-md-6">
+    {{ test }}
+  </p>
+  <p class="lead col-md-6" ng-bind="country | uppercase"></p>
+</div>
+<div class="form-inline">
+  <div class="input-group form-group col-md-5">
+    <span class="input-group-addon">Test ngModel</span>
+    <input type="text" class="form-control form-inline" placeholder="Test ngModel" ng-model="test">
+  </div>
+  <div class="input-group form-group col-md-5 col-md-offset-1">
+    <span class="input-group-addon">Select country</span>
+    <select type="text" class="form-control" ng-model="country" ng-options="country for country in countries">
+      <option value="">Select country</option>
+    </select>
+  </div>
+</div>
+
+<h2 class="page-header">$filter Test</h2>
+<div class="row">
+  <p class="lead col-md-1">
+    {{ 10 | number }}
+  </p>
+  <p class="lead col-md-1">
+    {{ quantity | number }}
+  </p>
+  <p class="lead col-md-2" ng-bind="quantity | number:5"></p>
+
+  <p class="lead col-md-2">
+    {{ date | date:"dd/MM/yyyy"}}
+  </p>
+
+  <p class="lead col-md-2">
+    {{ amount | currency:"USD$":2 }}
+  </p>
+
+  <p class="lead col-md-2" ng-bind="conversionRate"></p>
+  <p class="lead col-md-1">
+    {{ 2 | power }}
+  </p>
+  <p class="lead col-md-1">
+    {{ 2 | power:4 }}
+  </p>
+</div>
+
+<p class="lead" ng-show="books.length > 0">
+  {{ books | json }}
+</p>
+</div>

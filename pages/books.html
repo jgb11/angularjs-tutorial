@@ -23,9 +23,10 @@
 <div class="height80" ng-show="editBook == null">
   <h2 class="page-header">Create Book</h2>
   <form name="formAddbook" class="form-inline" ng-submit="addBook(formAddbook)" novalidate>
-    <div class="form-group col-md-3">
+    <div class="form-group col-md-3" ng-class="{ 'has-error': formAddbook.inputBookName.$touched && formAddbook.inputBookName.$error.required }">
       <label for="inputBookName" class="label label-primary">Book name</label>
       <input type="text" name="inputBookName" class="form-control" id="inputBookName" placeholder="Book name" required ng-model="book.BookName">
+      <span ng-show="formAddbook.inputBookName.$touched && formAddbook.inputBookName.$error.required" class="help-block">Book name is required.</span>
     </div>
     <div class="form-group col-md-3">
       <label for="inputAuthorName" class="label label-primary">Author name</label>
